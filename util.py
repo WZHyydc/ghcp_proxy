@@ -3,6 +3,7 @@
 import glob
 import hashlib
 import gzip
+import io
 import json
 import os
 import re
@@ -52,7 +53,14 @@ def zstd_decompress(data: bytes) -> bytes:
     if _stdlib_zstd is not None:
         return _stdlib_zstd.decompress(data)
     if _zstandard is not None:
-        return _zstandard.ZstdDecompressor().decompress(data)
+        decompressor = _zstandard.ZstdDecompressor()
+        try:
+            return decompressor.decompress(data)
+        except _zstandard.ZstdError:
+            # Streaming encoders (e.g. the Codex CLI) omit the frame content
+            # size; one-shot decompress() requires it, so fall back to the
+            # stream reader, which also handles concatenated frames.
+            return decompressor.stream_reader(io.BytesIO(data)).read()
     raise RuntimeError("zstd support requires Python 3.14+ or the zstandard package")
 
 
