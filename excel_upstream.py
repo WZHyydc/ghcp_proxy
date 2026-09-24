@@ -27,6 +27,7 @@ import responses_replay_ids
 
 
 EXCEL_MODEL_UPSTREAMS = {
+    "gpt-6-astra-excel": "gpt-6-astra",
     "gpt-5.6-luna-excel": "gpt-5.6-luna",
     "gpt-5.6-terra-excel": "gpt-5.6-terra",
     "gpt-5.6-sol-excel": "gpt-5.6-sol",
@@ -153,6 +154,7 @@ LOCAL_MODEL_CAPABILITIES = {
         "auto_compact_token_limit": 180_000,
         "context_window": 200_000 if "luna" in model_id else 272_000,
         "display_name": {
+            "gpt-6-astra-excel": "6-Astra Excel",
             "gpt-5.6-luna-excel": "5.6-Luna Excel",
             "gpt-5.6-terra-excel": "5.6-Terra Excel",
             "gpt-5.6-sol-excel": "5.6-Sol Excel",

@@ -203,7 +203,8 @@ http://localhost:8000/
 
 ## GPT Excel Upstream
 
-`gpt-5.6-luna-excel`, `gpt-5.6-terra-excel`, and `gpt-5.6-sol-excel` are
+`gpt-6-astra-excel`, `gpt-5.6-luna-excel`, `gpt-5.6-terra-excel`, and
+`gpt-5.6-sol-excel` are
 Responses-only models that send requests to the matching official ChatGPT
 Excel add-in backend model instead of GitHub Copilot. They are experimental and
 unofficial. The backend may change without notice, and using an add-in session
@@ -253,8 +254,9 @@ account identifiers required by GHCP Proxy and submits them to the loopback
 session API. Token values are not printed or written to logs. The macOS session
 remains memory-only, but GHCP Proxy reloads it after restarts. If the token
 expires, refresh the ChatGPT Excel task pane so Excel writes a current token.
-After priming, select `gpt-5.6-luna-excel`, `gpt-5.6-terra-excel`, or
-`gpt-5.6-sol-excel` in Codex. Requests for all other models still use GitHub
+After priming, select `gpt-6-astra-excel`, `gpt-5.6-luna-excel`,
+`gpt-5.6-terra-excel`, or `gpt-5.6-sol-excel` in Codex. Requests for all other
+models still use GitHub
 Copilot. Each Excel alias sends its matching base model on the wire and exposes
 `low`, `medium`, `high`, and `xhigh` reasoning efforts (`x-high` is accepted as
 an input alias).

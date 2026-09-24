@@ -529,6 +529,8 @@ MODEL_PRICING_ALIASES = {
     "gpt-5.6 sol excel": "gpt-5.6-sol-excel",
     "gpt-5.6 terra": "gpt-5.6-terra",
     "gpt-5.6 terra excel": "gpt-5.6-terra-excel",
+    "gpt-6 astra": "gpt-6-astra",
+    "gpt-6 astra excel": "gpt-6-astra-excel",
 }
 
 # ─── Safeguard defaults ──────────────────────────────────────────────────────
